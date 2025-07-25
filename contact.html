@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skill Swap</div>
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+            <li><a href="skills.html">Browse Skills</a></li>
+            <li><a href="add-skill.html">Add Skill</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Contact Us</h1>
+    <section>
+        <h3>Get in Touch</h3>
+        <p>If you have any questions or feedback, feel free to reach out!</p>
+        <form action="submit_contact.html" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Skill Swap. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@skillswap.com">support@skillswap.com</a></p>
+    </footer>
+    <form id="contact-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" rows="4" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const res = await fetch('http://localhost:5000/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message })
+  });
+
+  const data = await res.json();
+  alert(data.message);
+});
+</script>
+</body>
+</html>

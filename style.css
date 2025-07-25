@@ -1,0 +1,151 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #1e2a38;
+  line-height: 1.6;
+  /* Removed padding from body to allow full width for navbar and footer */
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment of items in the navbar */
+  background-color: #1e2a38;
+  padding: 15px 20px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box; /* Ensures the navbar spans the full width of the viewport */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f9c74f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Ensures the nav links are vertically aligned */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f9c74f;
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  /* Added padding to main content for internal spacing as removed from body */
+  padding: 50px 20px; 
+}
+
+main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+
+main p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+main h2 {
+  font-size: 1.4rem;
+  margin: 30px 0 10px;
+  color: #1e2a38;
+}
+
+ul {
+  list-style: disc inside;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Course Image */
+main img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* Back Button */
+button {
+  background-color: #1e2a38;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #374c63;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  background-color: #1e2a38;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 50px;
+  width: 100%; /* Ensures the footer spans the full width of the viewport */
+  box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+footer a {
+  color: #f9c74f;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Navigation Hint */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .course-card img {
+    height: 200px;
+  }
+}

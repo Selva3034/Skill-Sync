@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI/UX Design Course</title>
+  <style>
+    .module {
+      margin-bottom: 20px;
+      border: 1px solid #7492ff;
+      border-radius: 8px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .module-header {
+      background-color: #1e2a38;
+      padding: 15px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .module-content {
+      display: none;
+      padding: 15px 20px;
+      border-top: 1px solid #ffffff;
+    }
+
+    .module-content iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .lesson {
+      margin-bottom: 10px;
+    }
+
+    .lesson .title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .complete-badge {
+      background-color: #d4edda;
+      color: #155724;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    .arrow {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .open .arrow {
+      transform: rotate(90deg);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e2a38;
+      padding: 15px 20px;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #f9c74f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #f9c74f;
+    }
+
+    button {
+      background-color: #1e2a38;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #374c63;
+    }
+
+    .article-link {
+      display: block;
+      margin-bottom: 10px;
+      color: #1e2a38;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .article-link:hover {
+      color: #3b5eb5;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Skill Sync</div>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Browse Skills</a></li>
+      <li><a href="add-skill.html">Add Skill</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>UI/UX Design</h1>
+    <p>Learn design thinking, wireframing, and UI tools like Figma.</p>
+
+    <!-- Module 1 -->
+    <div class="module">
+      <div class="module-header" onclick="toggleModule(this)">
+        <h3 style="color: #ffffff;">Module 1: UI/UX Basics</h3>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="module-content">
+        <div class="lesson">
+          <div class="title">What is UI/UX?</div>
+          <iframe src="https://www.youtube.com/embed/z7e7gtU3PHY"></iframe>
+        </div>
+        <div class="lesson">
+          <div class="title">Design Process</div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/kQ2YOLlGjxk" title="UI/UX Design Process" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="module">
+      <div class="module-header" onclick="toggleModule(this)">
+        <h3 style="color: #ffffff;">Module 2: Figma Walkthrough</h3>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="module-content">
+        <div class="lesson">
+          <div class="title">Intro to Figma</div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/FTFaQWZBqQ8" title="Figma Beginner Tutorial" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-header" onclick="toggleModule(this)">
+        <h3 style="color: #ffffff;">Module 3: Figma Advanced</h3>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="module-content">
+        <div class="lesson">
+          <div class="title">Advancing to Figma</div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/31wzhvz0vsw" title="Figma Advanced Tutorial" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="module-header" onclick="toggleModule(this)">
+        <h3 style="color: #ffffff;">Module 4: Framer Walkthrough</h3>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="module-content">
+        <div class="lesson">
+          <div class="title">Introduction to Framer</div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/31wzhvz0vsw" title="Framer Beginner Tutorial" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Module 3: Articles on UI/UX -->
+    <div class="module">
+      <div class="module-header" onclick="toggleModule(this)">
+        <h3 style="color: #ffffff;">Module 5: Articles on UI/UX Design</h3>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="module-content">
+        <div class="lesson">
+          <div class="title">Recommended Reading</div>
+          <a class="article-link" href="https://uxdesign.cc" target="_blank">UX Design Blog – Medium</a>
+          <a class="article-link" href="https://www.interaction-design.org/literature/topics/ui-design" target="_blank">Interaction Design Foundation – UI Design</a>
+          <a class="article-link" href="https://www.smashingmagazine.com/category/uxdesign/" target="_blank">Smashing Magazine – UX Design Articles</a>
+          <a class="article-link" href="https://www.figma.com/blog/" target="_blank">Figma Official Blog</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="color: black;" align="center">Upcoming Modules will be available soon!</h2>
+    <a href="skills.html"><button>⬅ Back to Courses</button></a>
+  </main>
+
+  <script>
+    function toggleModule(header) {
+      const module = header.parentElement;
+      const content = module.querySelector('.module-content');
+      const arrow = header.querySelector('.arrow');
+
+      module.classList.toggle('open');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
